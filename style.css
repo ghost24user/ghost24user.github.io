@@ -754,3 +754,112 @@ body:hover .cursor-glow {
         height: 60px;
     }
 }
+/* Pulsating animation */
+@keyframes pulsate {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.pulsate {
+    animation: pulsate 2s infinite;
+}
+
+/* Hero section adjustments */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero-button-container {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Services grid centering */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.service-card {
+    flex: 0 0 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+}
+
+@media (max-width: 1024px) {
+    .service-card {
+        flex: 0 0 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Contact info centering */
+.contact-methods {
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-item {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer fixes */
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Language modal fix */
+.language-modal {
+    display: none;
+}
+
+/* Show modal only on initial load */
+body:not(.language-selected) .language-modal {
+    display: flex;
+}
+
+/* Remove zoom on mobile */
+@media (max-width: 768px) {
+    html {
+        zoom: 1;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Typewriter effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.typewriter-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end);
+}
