@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Check if language is already set
+    const language = localStorage.getItem('language') || 'en';
+    
+    // Only show modal if language not set
+    if (!localStorage.getItem('language')) {
+        document.getElementById('languageModal').style.display = 'flex';
+    }
+
     // Cursor Glow Effect
     const cursorGlow = document.querySelector('.cursor-glow');
     
@@ -81,3 +89,22 @@ document.addEventListener('DOMContentLoaded', function() {
         servicesExpanded = !servicesExpanded;
     });
 });
+
+// Language selection function
+function setLanguage(lang) {
+    localStorage.setItem('language', lang);
+    if (lang === 'ro') {
+        window.location.href = 'index-ro.html';
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+
+// Close modal if clicked outside
+window.onclick = function(event) {
+    const modal = document.getElementById('languageModal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        localStorage.setItem('language', 'en'); // Default to English if dismissed
+    }
+}
