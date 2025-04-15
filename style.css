@@ -17,6 +17,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Zoom settings */
+    zoom: 1;
 }
 
 body {
@@ -26,6 +28,20 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     cursor: none;
+}
+
+/* Mobile Zoom */
+@media only screen and (max-width: 768px) {
+    html {
+        zoom: 0.8;
+    }
+}
+
+/* Tablet - No zoom */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    html {
+        zoom: 1;
+    }
 }
 
 /* Terminal Prefix Styling */
