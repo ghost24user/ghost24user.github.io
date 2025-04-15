@@ -26,14 +26,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scroll animations
     const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.hero, .clients, .about, .services, .contact-form');
+        const elements = document.querySelectorAll('.hidden');
+        const windowHeight = window.innerHeight;
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
+            const elementVisible = 150;
             
-            if (elementPosition < screenPosition) {
-                element.classList.add('fade-in');
+            if (elementPosition < windowHeight - elementVisible) {
+                element.classList.add('visible');
             }
         });
     };
