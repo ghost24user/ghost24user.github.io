@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Check if language is already set
-    const language = localStorage.getItem('language') || 'en';
+    const language = localStorage.getItem('language');
     
     // Only show modal if language not set
     if (!localStorage.getItem('language')) {
@@ -95,8 +95,14 @@ function setLanguage(lang) {
     localStorage.setItem('language', lang);
     if (lang === 'ro') {
         window.location.href = 'index-ro.html';
-    } else {
-        window.location.href = 'index.html';
+    }
+}
+
+// Close modal function
+function closeModal() {
+    document.getElementById('languageModal').style.display = 'none';
+    if (!localStorage.getItem('language')) {
+        localStorage.setItem('language', 'en');
     }
 }
 
@@ -104,7 +110,6 @@ function setLanguage(lang) {
 window.onclick = function(event) {
     const modal = document.getElementById('languageModal');
     if (event.target == modal) {
-        modal.style.display = 'none';
-        localStorage.setItem('language', 'en'); // Default to English if dismissed
+        closeModal();
     }
 }
