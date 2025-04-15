@@ -2,18 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=no">
     <title>Sebastian Ungureanu | Marketing Solutions</title>
-    <!-- FAVICON PLACEHOLDER - Upload your favicon.ico file to the root directory -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Google Fonts - JetBrains Mono -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Language Selection Modal -->
+    <div class="language-modal" id="languageModal">
+        <div class="modal-content">
+            <h3><span class="terminal-prefix">></span> SELECT_LANGUAGE</h3>
+            <div class="language-options">
+                <button onclick="setLanguage('en')">
+                    <img src="https://flagcdn.com/w40/gb.png" alt="English">
+                    <span>ENGLISH</span>
+                </button>
+                <button onclick="setLanguage('ro')">
+                    <img src="https://flagcdn.com/w40/ro.png" alt="Romanian">
+                    <span>ROMÂNĂ</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Cursor Glow Effect -->
     <div class="cursor-glow"></div>
 
@@ -28,13 +41,9 @@
                 <span class="terminal-prefix">></span>
                 <span class="nav-text">SERVICES</span>
             </a>
-            <a href="#contact" class="nav-link">
-                <span class="terminal-prefix">></span>
-                <span class="nav-text">CONTACT</span>
-            </a>
-            <a href="#" class="nav-button">
+            <a href="#contact" class="nav-button">
                 <span class="terminal-prefix purple-btn">></span>
-                <span class="nav-text">START</span>
+                <span class="nav-text">CONTACT</span>
             </a>
         </div>
     </nav>
@@ -63,8 +72,6 @@
     <section class="clients hidden">
         <h3><span class="terminal-prefix">></span> TRUSTED_BY</h3>
         <div class="client-logos">
-            <!-- ADD YOUR CLIENT LOGOS HERE -->
-            <!-- Replace these with your actual client logos -->
             <div class="logo-placeholder">CLIENT_LOGO_1</div>
             <div class="logo-placeholder">CLIENT_LOGO_2</div>
             <div class="logo-placeholder">CLIENT_LOGO_3</div>
@@ -254,7 +261,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
