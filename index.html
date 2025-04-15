@@ -81,23 +81,6 @@
         </div>
     </section>
 
-    <!-- Contact Info Section -->
-    <section class="contact-info hidden">
-        <div class="contact-container">
-            <h3><span class="terminal-prefix">></span> CONTACT_INFO</h3>
-            <div class="contact-methods">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>YOUR_PHONE_NUMBER</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>YOUR_EMAIL@EXAMPLE.COM</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Section -->
     <section class="services hidden" id="services">
         <h3><span class="terminal-prefix">></span> MY_SERVICES</h3>
@@ -118,24 +101,128 @@
             </div>
             <div class="service-card">
                 <div class="service-icon">
-                    <i class="fas fa-analytics"></i>
+                    <i class="fas fa-database"></i>
                 </div>
                 <h4><span class="terminal-prefix">></span> DATA_ANALYTICS</h4>
                 <p>In-depth analysis of campaign performance with actionable insights for optimization.</p>
             </div>
+            <!-- Hidden services -->
+            <div class="service-card hidden-service">
+                <div class="service-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h4><span class="terminal-prefix">></span> SEO</h4>
+                <p>On-page and off-page SEO strategies to improve your search engine rankings.</p>
+            </div>
+            <div class="service-card hidden-service">
+                <div class="service-icon">
+                    <i class="fab fa-google"></i>
+                </div>
+                <h4><span class="terminal-prefix">></span> GOOGLE_ADS</h4>
+                <p>Effective Google Ads campaigns to drive targeted traffic to your business.</p>
+            </div>
+            <div class="service-card hidden-service">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h4><span class="terminal-prefix">></span> AI_CHATBOT</h4>
+                <p>Custom AI-powered chatbots to enhance customer service and engagement.</p>
+            </div>
+            <div class="service-card hidden-service">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h4><span class="terminal-prefix">></span> WEB_DEVELOPMENT</h4>
+                <p>Professional website development and redesign services for modern businesses.</p>
+            </div>
         </div>
-        <a href="#" class="see-more-button">
+        <button class="see-more-button" id="toggleServices">
             <span class="terminal-prefix">></span>
             <span>SEE_MORE</span>
-        </a>
+        </button>
     </section>
 
-    <!-- FORM SECTION - ADD YOUR FORM HERE -->
+    <!-- Contact Info Section -->
+    <section class="contact-info hidden">
+        <div class="contact-container">
+            <h3><span class="terminal-prefix">></span> CONTACT_INFO</h3>
+            <div class="contact-methods">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>YOUR_PHONE_NUMBER</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>YOUR_EMAIL@EXAMPLE.COM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM SECTION -->
     <section class="contact-form hidden" id="contact">
         <h3><span class="terminal-prefix">></span> GET_IN_TOUCH</h3>
-        <!-- FORM PLACEHOLDER - Add your form code here -->
         <div class="form-container">
-            <p>Form will go here. You can add any form service like Formspree or custom HTML form.</p>
+            <form action="https://formsubmit.co/your@email.com" method="POST">
+                <div class="form-group">
+                    <label for="name">
+                        <span class="terminal-prefix">></span>
+                        <span>NAME: *</span>
+                    </label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">
+                        <span class="terminal-prefix">></span>
+                        <span>PHONE_NUMBER: *</span>
+                    </label>
+                    <input type="tel" name="phone" id="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">
+                        <span class="terminal-prefix">></span>
+                        <span>COMPANY_NAME: *</span>
+                    </label>
+                    <input type="text" name="company" id="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">
+                        <span class="terminal-prefix">></span>
+                        <span>EMAIL:</span>
+                    </label>
+                    <input type="email" name="email" id="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="product">
+                        <span class="terminal-prefix">></span>
+                        <span>SELECT_PRODUCT: *</span>
+                    </label>
+                    <select name="product" id="product" required>
+                        <option value="">-- Please choose an option --</option>
+                        <option value="Strategic Marketing">Strategic Marketing</option>
+                        <option value="Targeted Ads">Targeted Ads</option>
+                        <option value="Data Analytics">Data Analytics</option>
+                        <option value="SEO">SEO</option>
+                        <option value="Google Ads">Google Ads</option>
+                        <option value="AI Chatbot">AI Chatbot</option>
+                        <option value="Web Development">Web Development</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="form-button">
+                    <span class="terminal-prefix purple-btn">></span>
+                    <span>SEND_MESSAGE</span>
+                </button>
+                
+                <p class="form-note">
+                    <span class="terminal-prefix">></span>
+                    <span>* REQUIRED_FIELDS</span>
+                </p>
+            </form>
         </div>
     </section>
 
