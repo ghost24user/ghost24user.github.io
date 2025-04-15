@@ -143,7 +143,7 @@ body:hover .cursor-glow {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 20px;
     letter-spacing: 2px;
     display: flex;
@@ -151,7 +151,7 @@ body:hover .cursor-glow {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: 30px;
     color: var(--white);
     font-weight: 300;
@@ -592,19 +592,6 @@ body:hover .cursor-glow {
     height: auto;
 }
 
-/* Mobile-specific zoom adjustment */
-@media only screen and (max-width: 768px) {
-    html {
-        zoom: 0.9;
-    }
-}
-
-/* Prevent zooming on mobile */
-@viewport {
-    width: device-width;
-    zoom: 0.9;
-}
-
 /* Hidden class for scroll animations */
 .hidden {
     opacity: 0;
@@ -632,14 +619,6 @@ body:hover .cursor-glow {
         margin-left: 0;
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
     .services-grid {
         grid-template-columns: 1fr;
     }
@@ -664,14 +643,6 @@ body:hover .cursor-glow {
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
     .client-logos {
         gap: 20px;
     }
