@@ -469,17 +469,11 @@ body:hover .cursor-glow {
     transform: translateY(0);
 }
 
-.contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .contact-methods {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .contact-item {
@@ -491,8 +485,15 @@ body:hover .cursor-glow {
 
 .contact-item i {
     color: var(--purple);
+    font-size: 1.4rem;
 }
 
+/* Ensure proper spacing */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /* Contact Form Section */
 .contact-form {
     padding: 100px 20px;
