@@ -123,10 +123,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-// Add blinking cursor to all terminal prefixes
-document.querySelectorAll('.terminal-prefix:not(.purple-btn)').forEach(prefix => {
-    // Skip if it's in the header or already has pulsate animation
-    if (!prefix.closest('.navbar') && !prefix.closest('.hero-title')) {
-        prefix.style.animation = 'blink 1s step-end infinite';
-    }
-});
