@@ -58,4 +58,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Start typing after a short delay
     setTimeout(typeWriter, 500);
+
+    // Toggle services visibility
+    const toggleButton = document.getElementById('toggleServices');
+    const hiddenServices = document.querySelectorAll('.hidden-service');
+    let servicesExpanded = false;
+    
+    toggleButton.addEventListener('click', () => {
+        if (servicesExpanded) {
+            // Collapse services
+            hiddenServices.forEach(service => {
+                service.classList.add('hidden-service');
+            });
+            toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_MORE</span>';
+        } else {
+            // Expand services
+            hiddenServices.forEach(service => {
+                service.classList.remove('hidden-service');
+            });
+            toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_LESS</span>';
+        }
+        servicesExpanded = !servicesExpanded;
+    });
 });
