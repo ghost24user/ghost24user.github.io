@@ -10,30 +10,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Language Selection Modal -->
-    <div class="language-modal" id="languageModal">
-        <div class="modal-content">
-            <h3><span class="terminal-prefix">></span> SELECTEAZĂ_LIMBA</h3>
-            <div class="language-options">
-                <button onclick="setLanguage('en')">
-                    <img src="https://flagcdn.com/w40/gb.png" alt="English">
-                    <span>ENGLISH</span>
-                </button>
-                <button onclick="closeModal()">
-                    <img src="https://flagcdn.com/w40/ro.png" alt="Romanian">
-                    <span>ROMÂNĂ</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Cursor Glow Effect -->
     <div class="cursor-glow"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-left">
-            <span class="terminal-prefix">></span>
+            <span class="terminal-prefix pulsate">></span>
             <span class="nav-logo">SEBASTIAN_UNGUREANU</span>
         </div>
         <div class="nav-right">
@@ -50,21 +33,25 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="typewriter">
-            <h1 class="hero-title">
-                <span class="terminal-prefix">></span>
-                <span class="title-text">SEBASTIAN_UNGUREANU</span>
-            </h1>
-            <h2 class="hero-subtitle">PROMOVEAZĂ-TE AFACEREA CU MARKETING MODERN</h2>
-            <div class="hero-description">
-                <p><span class="terminal-prefix">></span> Strategii de marketing bazate pe date</p>
-                <p><span class="terminal-prefix">></span> Soluții digitale de ultimă oră</p>
-                <p><span class="terminal-prefix">></span> Campanii axate pe rezultate</p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="terminal-prefix pulsate">></span>
+                    <span class="title-text">SEBASTIAN_UNGUREANU</span>
+                </h1>
+                <h2 class="hero-subtitle">PROMOVEAZĂ-TE AFACEREA CU MARKETING MODERN</h2>
+                <div class="hero-description">
+                    <p><span class="terminal-prefix">></span> Strategii de marketing bazate pe date</p>
+                    <p><span class="terminal-prefix">></span> Soluții digitale de ultimă oră</p>
+                    <p><span class="terminal-prefix">></span> Campanii axate pe rezultate</p>
+                </div>
             </div>
-            <a href="#services" class="hero-button">
-                <span class="terminal-prefix purple-btn">></span>
-                <span>EXPLOREAZĂ_SERVICII</span>
-            </a>
+            <div class="hero-button-container">
+                <a href="#services" class="hero-button">
+                    <span class="terminal-prefix purple-btn">></span>
+                    <span>EXPLOREAZĂ_SERVICII</span>
+                </a>
+            </div>
         </div>
     </section>
 
