@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Force mobile zoom to 80%
+function setMobileZoom() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+        const viewportMeta = document.querySelector('meta[name="viewport"]');
+        viewportMeta.content = 'width=device-width, initial-scale=0.8, maximum-scale=0.8, user-scalable=no';
+    }
+}
+
+// Run on load and resize
+window.addEventListener('load', setMobileZoom);
+window.addEventListener('resize', setMobileZoom);
+    
     // Language selection
     if (!localStorage.getItem('language')) {
         document.getElementById('languageModal').style.display = 'flex';
