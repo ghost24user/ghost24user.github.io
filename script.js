@@ -89,24 +89,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Toggle services visibility
+     // Toggle services visibility - FIXED VERSION
     const toggleButton = document.getElementById('toggleServices');
     if (toggleButton) {
         const hiddenServices = document.querySelectorAll('.hidden-service');
         let servicesExpanded = false;
         
         toggleButton.addEventListener('click', () => {
+            servicesExpanded = !servicesExpanded;
+            
             hiddenServices.forEach(service => {
-                service.style.display = servicesExpanded ? 'none' : 'block';
-                setTimeout(() => {
-                    service.classList.toggle('hidden-service', servicesExpanded);
-                    service.style.display = '';
-                }, 10);
+                if (servicesExpanded) {
+                    service.style.opacity = '0';
+                    service.style.maxHeight = '0';
+                    service.style.padding = '0';
+                    service.style.margin = '0';
+                    service.style.border = '0';
+                    // Force reflow
+                    void service.offsetHeight;
+                    service.classList.remove('hidden-service');
+                    service.style.opacity = '';
+                    service.style.maxHeight = '';
+                    service.style.padding = '';
+                    service.style.margin = '';
+                    service.style.border = '';
+                } else {
+                    service.classList.add('hidden-service');
+                }
             });
             
-            const text = servicesExpanded ? 'SEE_MORE' : 'SEE_LESS';
+            const text = servicesExpanded ? 'SEE_LESS' : 'SEE_MORE';
             toggleButton.innerHTML = `<span class="terminal-prefix">></span><span>${text}</span>`;
-            servicesExpanded = !servicesExpanded;
         });
     }
 });
