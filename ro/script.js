@@ -15,8 +15,8 @@ window.addEventListener('resize', setMobileZoom);
     // Language selection
     if (!localStorage.getItem('language')) {
         document.getElementById('languageModal').style.display = 'flex';
-    } else if (localStorage.getItem('language') === 'ro' && !window.location.href.includes('ro/index-ro.html')) {
-        window.location.href = 'ro/index-ro.html';
+    } else if (localStorage.getItem('language') === 'ro' && !window.location.href.includes('ro/index.html')) {
+        window.location.href = 'ro/index.html';
     }
 
     // Set language and close modal
@@ -26,7 +26,7 @@ window.addEventListener('resize', setMobileZoom);
         
         if (lang === 'ro') {
             setTimeout(() => {
-                window.location.href = 'ro/index-ro.html';
+                window.location.href = 'ro/index.html';
             }, 300);
         } else {
             closeModal();
