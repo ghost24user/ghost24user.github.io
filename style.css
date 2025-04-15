@@ -201,7 +201,93 @@ body:hover .cursor-glow {
     box-shadow: 0 0 20px var(--purple-glow);
     transform: translateY(-3px);
 }
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
 
+.hero-content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-button {
+    background-color: var(--purple);
+    color: var(--black);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    align-self: center;
+    margin-top: 20px;
+}
+
+/* Form Dropdown Styles */
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--dark-gray);
+    border: 1px solid rgba(162, 89, 255, 0.3);
+    border-radius: 5px;
+    color: var(--light-gray);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A259FF'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+.form-group select option {
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    html {
+        zoom: 0.8;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-button {
+        align-self: center;
+        margin-top: 30px;
+    }
+    
+    .hero-description {
+        text-align: left;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    html {
+        zoom: 1;
+    }
+}
 /* Clients Section */
 .clients {
     padding: 80px 20px;
