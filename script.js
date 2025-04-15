@@ -87,25 +87,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Language functions only for English version
+// Language selection function
 function setLanguage(lang) {
     localStorage.setItem('language', lang);
+    closeModal();
     if (lang === 'ro') {
         window.location.href = 'index-ro.html';
     }
 }
 
 function closeModal() {
-    document.getElementById('languageModal').style.display = 'none';
+    const modal = document.getElementById('languageModal');
+    if (modal) {
+        modal.style.display = 'none';
+    }
     localStorage.setItem('language', 'en');
 }
 
-// Close modal if clicked outside (English only)
-if (document.getElementById('languageModal')) {
-    window.onclick = function(event) {
-        const modal = document.getElementById('languageModal');
-        if (event.target == modal) {
-            closeModal();
-        }
+// Close modal if clicked outside
+window.onclick = function(event) {
+    const modal = document.getElementById('languageModal');
+    if (event.target == modal) {
+        closeModal();
     }
 }
