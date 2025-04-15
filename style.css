@@ -917,3 +917,57 @@ html {
         margin-top: -10px;
     }
 }
+/* Center Alignment for All Text-Icon Pairs */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-item i {
+    color: var(--purple);
+    font-size: 1.2rem;
+    flex-shrink: 0; /* Prevents icon from shrinking */
+}
+
+/* Ensures all terminal-style elements are centered */
+.services h3,
+.about h3,
+.clients h3,
+.contact-info h3,
+.contact-form h3 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Center-align all service cards */
+.services-grid {
+    justify-content: center;
+}
+
+/* Center-align form elements */
+.form-group {
+    text-align: center;
+}
+
+.form-group label {
+    justify-content: center;
+}
