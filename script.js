@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if language is already set
-    const language = localStorage.getItem('language');
-    
-    // Only show modal if language not set
-    if (!localStorage.getItem('language')) {
+    // Only show modal on English version
+    if (document.getElementById('languageModal') && !localStorage.getItem('language')) {
         document.getElementById('languageModal').style.display = 'flex';
     }
 
@@ -48,49 +45,49 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on load
+    animateOnScroll();
 
     // Typewriter effect for hero title
     const heroTitle = document.querySelector('.hero-title .title-text');
-    const originalText = heroTitle.textContent;
-    heroTitle.textContent = '';
-    
-    let i = 0;
-    const typeWriter = () => {
-        if (i < originalText.length) {
-            heroTitle.textContent += originalText.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100); // Typing speed
-        }
-    };
-    
-    // Start typing after a short delay
-    setTimeout(typeWriter, 500);
+    if (heroTitle) {
+        const originalText = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < originalText.length) {
+                heroTitle.textContent += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        };
+        setTimeout(typeWriter, 500);
+    }
 
     // Toggle services visibility
     const toggleButton = document.getElementById('toggleServices');
-    const hiddenServices = document.querySelectorAll('.hidden-service');
-    let servicesExpanded = false;
-    
-    toggleButton.addEventListener('click', () => {
-        if (servicesExpanded) {
-            // Collapse services
-            hiddenServices.forEach(service => {
-                service.classList.add('hidden-service');
-            });
-            toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_MORE</span>';
-        } else {
-            // Expand services
-            hiddenServices.forEach(service => {
-                service.classList.remove('hidden-service');
-            });
-            toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_LESS</span>';
-        }
-        servicesExpanded = !servicesExpanded;
-    });
+    if (toggleButton) {
+        const hiddenServices = document.querySelectorAll('.hidden-service');
+        let servicesExpanded = false;
+        
+        toggleButton.addEventListener('click', () => {
+            if (servicesExpanded) {
+                hiddenServices.forEach(service => {
+                    service.classList.add('hidden-service');
+                });
+                toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_MORE</span>';
+            } else {
+                hiddenServices.forEach(service => {
+                    service.classList.remove('hidden-service');
+                });
+                toggleButton.innerHTML = '<span class="terminal-prefix">></span><span>SEE_LESS</span>';
+            }
+            servicesExpanded = !servicesExpanded;
+        });
+    }
 });
 
-// Language selection function
+// Language functions only for English version
 function setLanguage(lang) {
     localStorage.setItem('language', lang);
     if (lang === 'ro') {
@@ -98,18 +95,17 @@ function setLanguage(lang) {
     }
 }
 
-// Close modal function
 function closeModal() {
     document.getElementById('languageModal').style.display = 'none';
-    if (!localStorage.getItem('language')) {
-        localStorage.setItem('language', 'en');
-    }
+    localStorage.setItem('language', 'en');
 }
 
-// Close modal if clicked outside
-window.onclick = function(event) {
-    const modal = document.getElementById('languageModal');
-    if (event.target == modal) {
-        closeModal();
-    }
+// Close modal if clicked outside (English only)
+if (document.getElementById('languageModal')) {
+    window.onclick = function(event) {
+        const modal = document.getElementById('languageModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
 }
