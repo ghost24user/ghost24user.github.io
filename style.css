@@ -912,33 +912,3 @@ html {
         margin-top: -10px;
     }
 }
-/* Cursor Blink Animation */
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Apply to all terminal prefixes except buttons */
-.terminal-prefix:not(.purple-btn) {
-    animation: blink 1s step-end infinite;
-}
-
-/* Remove animation from pulsating elements (header) */
-.navbar .terminal-prefix,
-.hero-title .terminal-prefix {
-    animation: none;
-}
-
-/* Specific styles for header arrow */
-.navbar .terminal-prefix,
-.hero-title .terminal-prefix {
-    animation: pulsate 2s infinite;
-}
-
-/* Ensure buttons don't blink */
-.nav-button .terminal-prefix,
-.hero-button .terminal-prefix,
-.form-button .terminal-prefix,
-.see-more-button .terminal-prefix {
-    animation: none !important;
-}
