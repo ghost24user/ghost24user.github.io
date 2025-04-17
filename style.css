@@ -464,7 +464,9 @@ body:hover .cursor-glow {
 }
 
 .contact-item {
-    display: contents; /* Allows children to participate in grid */
+    display: flex;
+    align-items: center; /* vertically aligns icon and text */
+    gap: 8px; /* optional: adds space between icon and text */
 }
 
 .contact-item i {
