@@ -464,15 +464,13 @@ body:hover .cursor-glow {
 }
 
 .contact-item {
-    display: inline-flex; /* inline if you want it to sit inside text, or use 'flex' for block */
-    align-items: center;
-    gap: 0.5rem; /* space between icon and email */
+    display: contents; /* Allows children to participate in grid */
+}
 
 .contact-item i {
     color: var(--purple);
     font-size: 1.2rem;
     justify-self: end; /* Aligns icons to the right */
-    display: inline-block; /* ensures icon doesn't break layout */
 }
 
 .contact-item span {
